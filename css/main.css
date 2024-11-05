@@ -2,62 +2,91 @@
   box-sizing: border-box;
 }
 
-html {
+html, #titleScene {
   margin: 0;
-  max-height: 100%;
   padding: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+html {
+  height: 100%;
   background-image: url(../images/Background/background.png);
   background-size: 300%;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-align: center;
+}
+
+#titleScene {
+  background-image: url(../images/Background/background_white.png);
+  background-size: 70%;
+  padding: 5%;
 }
 
 img {
   -webkit-user-drag: none;
 }
 
-#titleScene {
-  background-image: url(../images/Background/background_white.png);
-  background-size: 70%;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 5%;
-  margin-left: auto;
-  margin-right: auto;
-  
+h1, .notfound {
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 900;
+  font-style: normal;
+  line-height: 0;
+  -webkit-text-stroke: 2px #EB6182;
+  color: #fff;
 }
 
 h1 {
-  font-family: "Zen Maru Gothic", serif;
-  font-weight: 900;
-  font-style: normal;
   font-size: 4em;
   margin: 20%, -50%;
-  line-height: 0px;
-  -webkit-text-stroke: 2px #EB6182;
-  color: #fff; 
 }
 
 .notfound {
-  font-family: "Zen Maru Gothic", serif;
-  font-weight: 900;
-  font-style: normal;
   font-size: 0.9em;
   margin-bottom: 5%;
-  line-height: 0px;
   -webkit-text-stroke: 0.5px #EB6182;
-  color: #fff; 
 }
 
 #settingScene {
   background-color: #fff;
   width: 75%;
-  background-repeat: no-repeat;
   margin: 10px auto;
-  background-position: center;
   padding: 15%;
-  
+  text-align: center;
+}
+
+button, .difficulty-button, #back_titleSceneButton {
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  color: #fff;
+}
+
+button:hover {
+  transform: scale(1.05); /* ホバー時に少し拡大 */
+}
+
+button:active {
+  transform: scale(0.95); /* クリック時に少し縮小 */
+}
+
+#back_titleSceneButton {
+  background-color: #87CEEB; /* 水色 */
+}
+
+.difficulty-button {
+  background-color: #FFB6C1; /* ピンク */
+  margin-top: 10px;
+  width: 80%;
+  background-attachment: fixed;
+}
+
+#volume-value {
+  font-weight: bold;
+  color: #FFD700; /* 黄色 */
 }
 
 .bgmSwitch {
@@ -95,8 +124,6 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   margin: 20px auto;
-  width: auto;
-  height: auto;
 }
 
 .square {
@@ -105,40 +132,9 @@ h1 {
   height: 50px;
   border: solid black;
   border-width: 0 4px 4px 0;
-  cursor: pointer;;
+  cursor: pointer;
 }
 
 .square:nth-child(-n + 6) {
-  border-width: 4px 4px 4px 0;
-  height: 54px;
-}
-
-.square:nth-child(6n + 1) {
-  border-width: 0 4px 4px 4px;
-  width: 54px;
-}
-
-.square:first-child {
-  border-width: 4px;
-  width: 54px;
-  height: 54px;
-}
-
-.stone {
-  position: absolute;
-  top: 2px;
-  bottom: 0;
-  left: 2px;
-  width: 42px;
-  height: 42px;
-  border-radius: 21px;
-  background-color: black;
-}
-
-#square-template {
-  display: none;
-}
-
-.moyou1 {
-  height: 10%;
+  border-width: 4px 4px;
 }
